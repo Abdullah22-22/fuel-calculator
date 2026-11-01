@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fuel-calculator
+  labels:
+    app: fuel-calculator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fuel-calculator
+  template:
+    metadata:
+      labels:
+        app: fuel-calculator
+    spec:
+      containers:
+        - name: fuel-calculator
+          image: abdullah22hel/fuel-calculator:latest
+          imagePullPolicy: Always
+          env:
+            - name: DISPLAY
+              value: "172.20.10.2:0.0"
+            - name: LANG
+              value: "C.UTF-8"
+            - name: LC_ALL
+              value: "C.UTF-8"
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
+            limits:
+              memory: "768Mi"
+              cpu: "500m"

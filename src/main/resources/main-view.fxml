@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.MainController"
+      spacing="12">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <HBox spacing="8" alignment="CENTER_LEFT">
+        <Label fx:id="lblLanguage" text="%language.label"/>
+        <Button fx:id="btnEN" text="EN" onAction="#onEnglish"/>
+        <Button fx:id="btnFR" text="FR" onAction="#onFrench"/>
+        <Button fx:id="btnJP" text="JP" onAction="#onJapanese"/>
+        <Button fx:id="btnIR" text="IR" onAction="#onPersian"/>
+    </HBox>
+
+    <Label fx:id="lblTitle" text="%app.title">
+        <font>
+            <Font name="Arial" size="20"/>
+        </font>
+    </Label>
+
+    <GridPane hgap="10" vgap="10">
+        <Label fx:id="lblDistance" text="%distance.label"
+               GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="txtDistance"
+                   GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+        <Label fx:id="lblConsumption" text="%consumption.label"
+               GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField fx:id="txtConsumption"
+                   GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+        <Label fx:id="lblPrice" text="%price.label"
+               GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <TextField fx:id="txtPrice"
+                   GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    </GridPane>
+
+    <Button fx:id="btnCalculate" text="%calculate.button" onAction="#onCalculate"/>
+
+    <Label fx:id="lblResult" wrapText="true">
+        <font>
+            <Font name="Arial" size="14"/>
+        </font>
+    </Label>
+
+    <Label fx:id="lblName" text="Abdullah Altameemi"/>
+</VBox>
